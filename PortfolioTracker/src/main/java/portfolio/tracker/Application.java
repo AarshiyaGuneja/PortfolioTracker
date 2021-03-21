@@ -1,4 +1,4 @@
-package portfolio-tracker;
+package portfolio.tracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

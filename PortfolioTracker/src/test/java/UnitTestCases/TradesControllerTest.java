@@ -5,11 +5,16 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import portfolio.tracker.Application;
+import portfolio.tracker.Model.Trade;
 import portfolio.tracker.Repositories.TradeRepository;
+import portfolio.tracker.Services.PortfolioService;
 import portfolio.tracker.Services.TradeService;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = Application.class)
 public class TradesControllerTest {
 
     @Autowired
@@ -18,9 +23,14 @@ public class TradesControllerTest {
     @Autowired
     private TradeService tradeService;
 
+    @Autowired
+    private PortfolioService portfolioService;
+
     @Test
     public void testTradeControllers() throws Exception {
-        int id = 11;
-        tradeService.removeTrade(id);
+        List<Trade> allTrades = tradeService.getAllTrades();
+        if(allTrades != null ){
+            System.out.println("System is working fine.");
+        }
     }
 }
