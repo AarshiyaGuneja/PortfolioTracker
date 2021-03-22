@@ -29,10 +29,10 @@ public class Trade {
     private int quantity;
 
     @Column(name = "price")
-    private Integer price;
+    private int price;
 
     public Trade() {}
-    public Trade(int id, String security_ticker, String type, int quantity, Integer price) {
+    public Trade(int id, String security_ticker, String type, int quantity, int price) {
         this.id = id;
         this.security_ticker = security_ticker;
         this.type = type;
@@ -117,7 +117,7 @@ public class Trade {
      *
      * @return the price
      */
-    public Integer getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -126,7 +126,7 @@ public class Trade {
      *
      * @param price the price
      */
-    public void setPrice(Integer price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
